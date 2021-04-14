@@ -17,21 +17,21 @@ public class Ladder {
     protected String country;
     protected double weightInKg;
 
-    Ladder() {
-        amountOfLadders++;
+    public Ladder() {
+        this("default", 0, 0, "default");
     }
 
-    Ladder(String brand, double maxLength, int maxWeight, String material) {
+    public Ladder(String brand, double maxLength, int maxWeight, String material) {
+        this(brand, maxLength, maxWeight, material, false, "default", 0, 0,
+                false, "default", 0);
+    }
+
+    public Ladder(String brand, double maxLength, int maxWeight, String material, boolean isFoldable, String color,
+                  int amountOfSteps, int stepWidth, boolean isAntiSlipCoating, String country, double weightInKg) {
         this.brand = brand;
         this.maxLength = maxLength;
         this.maxWeight = maxWeight;
         this.material = material;
-        amountOfLadders++;
-    }
-
-    Ladder(String brand, double maxLength, int maxWeight, String material, boolean isFoldable, String color,
-           int amountOfSteps, int stepWidth, boolean isAntiSlipCoating, String country, double weightInKg) {
-        this(brand, maxLength, maxWeight, material);
         this.isFoldable = isFoldable;
         this.color = color;
         this.amountOfSteps = amountOfSteps;
@@ -122,4 +122,3 @@ public class Ladder {
         isAntiSlipCoating = antiSlipCoating;
     }
 }
-
